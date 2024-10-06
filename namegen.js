@@ -76,9 +76,9 @@ function buildDiv(partThis)
 
 function pullFromList(listName)
 {
-	getJSON(listName&".json", function(json) {
+	/*getJSON(listName&".json", function(json) {
     	console.log(json); // this will show the info it in firebug console
-	});
+	});*/
 	let testVar = "updateParts";
 	window[testVar]();
 }
