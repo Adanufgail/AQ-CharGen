@@ -1,2 +1,2 @@
-#DEBUG=myapp:* npm start
-npm start
+DEBUG=* npm run devStart #debug
+#npm run start #production

@@ -7,6 +7,24 @@
 var app = require('../app');
 var debug = require('debug')('namegenerator:server');
 var http = require('http');
+var mongoose = require('mongoose');
+var dotenv = require('dotenv').config();
+
+/**
+ * Connect to Mongo DB 
+ */
+
+function connectMongoose()
+{
+  debug("DEBUG: DATABASE_URL: "+process.env.DATABASE_URL);
+  //mongoose.connect(process.env.DATABASE_URL);
+  //const db = mongoose.connection;
+  //db.on('error', (error) => console.error(error));
+  //db.once('open', () => console.log("Connected to database"));
+}
+
+connectMongoose();
+
 
 /**
  * Get port from environment and store in Express.
