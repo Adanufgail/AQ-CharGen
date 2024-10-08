@@ -14,13 +14,23 @@ var dotenv = require('dotenv').config();
  * Connect to Mongo DB 
  */
 
-function connectMongoose()
+async function connectMongoose()
 {
-  debug("DEBUG: DATABASE_URL: "+process.env.DATABASE_URL);
-  //mongoose.connect(process.env.DATABASE_URL);
-  //const db = mongoose.connection;
-  //db.on('error', (error) => console.error(error));
-  //db.once('open', () => console.log("Connected to database"));
+  try{
+    let connectString = "mongodb://"+process.env.DATABASE_HOST+":"+process.env.DATABASE_PORT+"/"+process.env.DATABASE_DB+"?authSource=admin&authMechanism=SCRAM-SHA-256";
+    await mongoose.connect(connectString, {
+        authSource: "admin",
+        user: encodeURIComponent(process.env.DATABASE_USERNAME),
+        pass: encodeURIComponent(process.env.DATABASE_PASSWORD),
+    });
+    const db = mongoose.connection;
+    db.on('error', (error) => console.error(error));
+    db.once('open', () => console.log("Connected to database"));
+  }
+  catch(err)
+  {
+    console.log("ERROR: "+err.message)
+  }
 }
 
 connectMongoose();

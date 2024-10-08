@@ -4,9 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var partlistRouter = require('./routes/partlist');
+var indexRouter = require('./routes/indexRoute');
+var usersRouter = require('./routes/usersRoute');
+var partListRouter = require('./routes/partListRoute');
 
 var app = express();
 
@@ -24,30 +24,30 @@ app.use(loggerf);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/partlist', partlistRouter);
+app.use('/partList', partListRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 
 {
-  next(createError(404));
+    next(createError(404));
 });
 
 // error handler
 app.use(function(err, req, res, next) 
 {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
 
 function loggerf(req,res,next)
 {
-  console.log("URL: "+req.originalUrl);
-  next();
+    console.log("URL: "+req.originalUrl);
+    next();
 }
