@@ -1,17 +1,25 @@
 partcount=2;
-const container = document.querySelector("#container");
+//const container = document.querySelector("#container");
+const container = document.getElementById("container");
 
-const btnSubPart = document.querySelector("#btnSubPart");
-btnSubPart.addEventListener("click", () => {
+//const btnSubPart = document.querySelector("#btnSubPart");
+const btnSubPart = document.getElementById("btnSubPart");
+btnSubPart.addEventListener("click", () => 
+{
 	subPartLast();
 });
 
 const btnAddPart = document.querySelector("#btnAddPart");
-btnAddPart.addEventListener("click", () => {
+btnAddPart.addEventListener("click", () => 
+{
 	addPart();
 });
 
 const partArray = new Array();
+for(Z=0;Z<partcount;Z++)
+{
+	addPart()
+}
 
 function addPart()
 {
@@ -76,11 +84,7 @@ function buildDiv(partThis)
 
 function pullFromList(listName)
 {
-	/*getJSON(listName&".json", function(json) {
-    	console.log(json); // this will show the info it in firebug console
-	});*/
 	let testVar = "updateParts";
 	window[testVar]();
 }
-pullFromList("list")
 updateParts();
