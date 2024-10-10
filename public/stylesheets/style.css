@@ -1,10 +1,60 @@
 body 
 {
-  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*padding:0px;
+  margin:0px;*/
 }
-
 a 
 {
   color: #00B7FF;
+}
+.flex-container
+{
+	flex-wrap: wrap;
+}
+.container
+{
+	background-color: #006600;
+	display: flex;
+	margin-top:2px;
+}
+.part
+{
+	background-color: #999999;
+	display: flex;
+	flex-direction: column;
+	padding-right:1%;
+	height:100px;
+	min-width:50px;
+}
+.pos
+{
+	flex-grow:1;
+}
+.text
+{
+	flex-grow:1;
+}
+.buttondiv
+{
+	flex-grow:1;
+}
+.selectdiv
+{
+	flex-grow:1;
+}
+.button
+{
+	padding:0px;
+	border:0px;
+	margin:0px;
+	width:100%;
+}
+.dummy::before 
+{
+	content: "\00a0";
+}
+.dummy
+{
+	flex-grow:1;
 }
