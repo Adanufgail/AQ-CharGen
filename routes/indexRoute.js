@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) 
 {
-  res.render('index', { title: 'Name Generator' });
+  res.render('index', { title: 'Advenute Quest Character Generator' });
 });
 
 module.exports = router;

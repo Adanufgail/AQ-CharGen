@@ -5,10 +5,9 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('namegenerator:server');
+var debug = require('debug')('AQ-CharGen:server');
 var http = require('http');
 var mongoose = require('mongoose');
-var dotenv = require('dotenv').config();
 
 /**
  * Connect to Mongo DB 
@@ -16,6 +15,7 @@ var dotenv = require('dotenv').config();
 
 async function connectMongoose()
 {
+  console.log("DEUBG: Got here")
   try{
     let connectString = "mongodb://"+process.env.DATABASE_HOST+":"+process.env.DATABASE_PORT+"/"+process.env.DATABASE_DB+"?authSource=admin&authMechanism=SCRAM-SHA-256";
     await mongoose.connect(connectString, {
@@ -32,7 +32,7 @@ async function connectMongoose()
     console.log("ERROR: "+err.message)
   }
 }
-
+console.log("DEUBG: Connecting to Mongoose")
 connectMongoose();
 
 

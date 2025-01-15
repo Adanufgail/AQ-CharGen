@@ -1,10 +1,10 @@
 {
-  "name": "namegenerator",
+  "name": "AQ-CharGen",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "devStart": "nodemon ./bin/www"
+    "start": "node --env-file .env ./bin/www",
+    "devStart": "nodemon --env-file .env ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -16,7 +16,6 @@
   },
   "devDependencies": {
     "debug": "~2.6.9",
-    "dotenv": "^16.4.5",
     "nodemon": "^3.1.7"
   }
 }

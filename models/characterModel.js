@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const partListSchema = new mongoose.Schema ({
+const characterSchema = new mongoose.Schema ({
 	name: {
 		type: String,
 		required: true
@@ -44,4 +44,4 @@ const partListSchema = new mongoose.Schema ({
 	}
 });
 
-module.exports = mongoose.model('partList', partListSchema);
+module.exports = mongoose.model('characterList', characterSchema);
